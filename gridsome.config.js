@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Study Amatueur Radio',
+  siteName: 'Study Amateur Radio',
   siteUrl: 'https://kineticsoftware.github.io/',
   pathPrefix: '/StudyAmateurRadio',
   plugins: [
