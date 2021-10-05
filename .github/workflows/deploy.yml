@@ -2,7 +2,7 @@ name: Deploy
 on:
   push:
     branches:
-      - "*"
+      - "**"
   pull_request:
     branches:
       - main
@@ -10,28 +10,27 @@ jobs:
   Stage1:
     name: Stage 1
     runs-on: ubuntu-20.04
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-          cache: npm
-      - run: npm run build --if-present
-      - run: npm run deploy
-      - name: Determine If Master
-        run: |
-          release_branch=$(test "${{ github.ref }}" = refs/heads/master -o "${{ github.ref }}" = refs/heads/2.0/master -o "${{ github.ref }}" = refs/heads/3.0/master && echo true || echo false)
-          echo "Is this a release branch? ${release_branch}"
-          echo "SHOULD_TAG=${release_branch}" >> $GITHUB_ENV
-      - name: Create a GitHub release
-        if: ${{ success() && env.SHOULD_TAG=='true' }}
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.SEMVER_ESCAPED }}
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: 14.x
+      #     cache: npm
+      # - run: npm run build --if-present
+      # - run: npm run deploy
+      # - name: Determine If Master
+      #   run: |
+      #     release_branch=$(test "${{ github.ref }}" = refs/heads/master -o "${{ github.ref }}" = refs/heads/2.0/master -o "${{ github.ref }}" = refs/heads/3.0/master && echo true || echo false)
+      #     echo "Is this a release branch? ${release_branch}"
+      #     echo "SHOULD_TAG=${release_branch}" >> $GITHUB_ENV
+      # - name: Create a GitHub release
+      #   if: ${{ success() && env.SHOULD_TAG=='true' }}
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ env.SEMVER_ESCAPED }}
