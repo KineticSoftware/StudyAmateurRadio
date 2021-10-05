@@ -5,7 +5,7 @@ on:
       - "*"
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   Stage1:
     name: Stage 1
