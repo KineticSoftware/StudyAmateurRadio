@@ -22,7 +22,7 @@ jobs:
           node-version: 14.x
           cache: npm
       - name: Install Gridsome/CLI
-        run: npm --global @gridsome/cli
+        run: npm install --global @gridsome/cli
       - run: npm run build --if-present
       - run: npm run deploy
       - name: Determine If Main
