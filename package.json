@@ -7,10 +7,6 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "gh-pages": "^3.2.3",
     "gridsome": "^0.7.0"
-  },
-  "devDependencies": {
-    "gridsome/cli": ""
   }
 }
