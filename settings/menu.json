@@ -1,0 +1,28 @@
+{
+  "menu": [
+    {
+      "name": "Home",
+      "link": "/"
+    },
+    {
+      "name": "Online Resources",
+      "link": "/resources"
+    },
+    {
+      "name": "Sample Study Plan",
+      "link": "/plan"
+    },
+    {
+      "name": "Testing Centers",
+      "link": "/testing"
+    },
+    {
+      "name": "Blog",
+      "link": "/blog"
+    },
+    {
+      "name": "About",
+      "link": "/about"
+    }
+  ]
+}

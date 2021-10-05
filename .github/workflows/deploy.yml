@@ -5,8 +5,8 @@ on:
       - main
 
 jobs:
-  Stage1:
-    name: Stage 1
+  Deploy:
+    name: Deploy
     runs-on: ubuntu-20.04
 
     steps:
@@ -28,15 +28,15 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
-      - name: Determine If Main
-        run: |
-          release_branch=$(test "${{ github.ref }}" = refs/heads/main && echo true || echo false)
-          echo "Is this a release branch? ${release_branch}"
-          echo "SHOULD_TAG=${release_branch}" >> $GITHUB_ENV
-      - name: Create a GitHub release
-        if: ${{ success() && env.SHOULD_TAG=='true' }}
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.SEMVER_ESCAPED }}
+      # - name: Determine If Main
+      #   run: |
+      #     release_branch=$(test "${{ github.ref }}" = refs/heads/main && echo true || echo false)
+      #     echo "Is this a release branch? ${release_branch}"
+      #     echo "SHOULD_TAG=${release_branch}" >> $GITHUB_ENV
+      # - name: Create a GitHub release
+      #   if: ${{ success() && env.SHOULD_TAG=='true' }}
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ env.SEMVER_ESCAPED }}
