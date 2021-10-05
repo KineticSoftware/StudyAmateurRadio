@@ -3,7 +3,7 @@
     <footer id="footer" class="footer bg-gray-200" role="contentinfo">
       <div class="footer-inner container m-auto md:flex justify-between items-center px-6 py-10">
         <p class="text-purple-900 pb-8 md:pb-0">
-          © 2021 Study Amatuer Radio
+          © 2021 Study Amateur Radio
         </p>
 
         <ul class="flex justify-center">
