@@ -12,7 +12,7 @@
         </p>
 
         <p class="home-links">
-          <a href="./testing">Finding A Test Location</a>
+          <a href="https://hamstudy.org/sessions">Finding A Test Location</a>
           <a href="./resources">Online Resources</a>
           <a href="./plan">A Sample Study Plan</a>
         </p>
