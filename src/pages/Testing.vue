@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <h1>Finding A Test Location</h1>
-    <p>Put info about finding test locations here.</p>
+    <p>You can find both remote and in-person licensing exams at the <a href="https://hamstudy.org/sessions">HAM Study site</a>.</p>
   </Layout>
 </template>
 
